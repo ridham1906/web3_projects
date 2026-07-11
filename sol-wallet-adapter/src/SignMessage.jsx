@@ -12,8 +12,15 @@ export default function SignMessage() {
     const [isSigning, setIssigning] = useState(false);
 
     useEffect(()=> {
-        if(!publicKey) return toast.warning("Connect Wallet first to sign message");
-        if(!signMessage) return toast.error("Your wallet doesn't support message signing!")
+        if(!publicKey){
+            toast.error("Connect Wallet first to sign message");
+            return;
+        }
+
+        if(!signMessage) {
+            toast.error("Your wallet doesn't support message signing!")
+            return;
+        } 
     }, [publicKey, signMessage])
 
     const signMsg = async ()=> {

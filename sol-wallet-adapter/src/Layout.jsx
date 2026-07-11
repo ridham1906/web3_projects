@@ -4,6 +4,7 @@ import SignMessage from "./SignMessage";
 import SendSol from "./SendSol";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { LAMPORTS_PER_SOL } from "@solana/web3.js";
+import Token from "./Token";
 
 export default function Layout() {
 
@@ -45,6 +46,10 @@ export default function Layout() {
     {
         name: "Send SOL",
         component : <SendSol updateBalance={setBalance} />
+    },
+    {
+        name: "Token",
+        component : <Token />
     }
 ]
 

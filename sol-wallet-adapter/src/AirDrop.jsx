@@ -22,11 +22,13 @@ export default function AirDrop ({updateBalance, balance}) {
 
   const sendAirdropToUser = async () => {
     if (!wallet.connected) {
-      alert("Please connect your wallet first");
+      toast.error("Please connect your wallet first");
+      return;
     }
     
     if (!amount) {
-      alert("Please enter an amount");
+      toast.error("Please enter an amount");
+      return;
     }
     
     setLoading(true);
@@ -53,6 +55,7 @@ export default function AirDrop ({updateBalance, balance}) {
             type="number"
             className="ring-2 ring-gray-500 focus:ring-offset-1 focus:ring-indigo-600 focus:outline-none rounded-lg py-2 px-3"
             placeholder="Enter Amount"
+            onFocus={(e)=> e.target.select()}
             value={amount}
             onChange={(e)=> setAmount(e.target.value)}
           />

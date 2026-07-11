@@ -15,7 +15,8 @@ export default function SendSol ({updateBalance}){
     const [sending, setSending] = useState(false);
 
     useEffect(()=> {
-        if(!connection || !publicKey) return toast.warning("Connect wallet first")
+        if(!connection || !publicKey) toast.error("Connect wallet first");
+        return;
     }, [connection, publicKey])
 
 
@@ -79,6 +80,7 @@ export default function SendSol ({updateBalance}){
                      name="amount"
                      value={tcxData.amount}
                      onChange={handleChange}
+                     onFocus={(e)=> e.target.select()}
                     />
                     
                     <button type="submit" onClick={initTransaction}>
