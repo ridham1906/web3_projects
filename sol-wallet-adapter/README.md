@@ -1,9 +1,12 @@
-# Implementation of Solana Wallet Adapter
+# Implementation of basic dapp
 
-- Built small SOLANA Faucet using wallet adapter in react
+- Built small Solana Wallet Adapter using wallet adapter in react
 - you can Airdrop SOL tokens (devnet)
 - check balance
+- Sign Messages
+- Send SOL tokens to other wallet
 
-# TODO
-- signing message
-- sending transaction
+# steps to run 
+- bun install
+- bun run dev
+- app is live on - localhost:5173
